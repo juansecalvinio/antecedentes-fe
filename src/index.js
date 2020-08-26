@@ -10,6 +10,7 @@ import AppRoute from './routes/AppRoute';
 import App from './container/App';
 import Main from './container/Main';
 import { createGlobalStyle } from 'styled-components';
+import * as serviceWorker from './serviceWorker';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -44,8 +45,8 @@ const GlobalStyle = createGlobalStyle`
         padding: 0;
         box-sizing: border-box;
     }
+    html,
     body {
-        height: 100%;
         transition: all .3s ease;
     }
     textarea:focus, button:focus, input:focus {

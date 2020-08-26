@@ -1,0 +1,36 @@
+[{
+    "_id": {
+      "$oid": "5eebe19d8324a8231de12f22"
+    },
+    "name": "DELEGADO O MIEMBRO DEL SINDICATO"
+  },{
+    "_id": {
+      "$oid": "5eebe1ab8324a8231de12f23"
+    },
+    "name": "PROBLEMAS DE CONDUCTA"
+  },{
+    "_id": {
+      "$oid": "5eebe1b58324a8231de12f24"
+    },
+    "name": "PROBLEMAS DE ASISTENCIA"
+  },{
+    "_id": {
+      "$oid": "5eebe1c18324a8231de12f25"
+    },
+    "name": "VIOLENCIA"
+  },{
+    "_id": {
+      "$oid": "5eebe1d38324a8231de12f26"
+    },
+    "name": "ROBOS - HURTOS"
+  },{
+    "_id": {
+      "$oid": "5eebe1eb8324a8231de12f27"
+    },
+    "name": "DIFICULTADES FÍSICAS CRÓNICAS"
+  },{
+    "_id": {
+      "$oid": "5eebe2008324a8231de12f28"
+    },
+    "name": "ADICCIONES"
+  }]
