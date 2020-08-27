@@ -9,7 +9,7 @@ const Container = styled.div`
 `;
 
 const PageContainer = styled.div`
-    margin: 12rem 6rem; /** 8rem tiene height del Header */
+    margin: 9rem 5rem; /** 8rem tiene height del Header */
     position: relative;
 `;
 

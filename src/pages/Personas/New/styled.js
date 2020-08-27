@@ -37,7 +37,7 @@ export const FormContainer = styled.div`
     margin-right: 0;
     margin-left: 0;
     padding: 2.5rem;
-    width: 80%;
+    width: 90%;
 
     & h3 {
         margin-bottom: 1.5rem;
