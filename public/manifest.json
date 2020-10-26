@@ -1,9 +1,9 @@
 {
-  "main.js": "/main.ea589b1293f73c8da34d.bundle.js",
-  "99e45dd643ded087661d3f7924503b74.png": "/99e45dd643ded087661d3f7924503b74.png",
-  "ac4bd71e831a04baaadc8e530e5f6eb6.svg": "/ac4bd71e831a04baaadc8e530e5f6eb6.svg",
-  "eabc2dd8e208d3f0c61ccdf85f1d4045.svg": "/eabc2dd8e208d3f0c61ccdf85f1d4045.svg",
-  "f7a285413b82d3945379daef33ff66a8.svg": "/f7a285413b82d3945379daef33ff66a8.svg",
-  "favicon.ico": "/favicon.ico",
-  "index.html": "/index.html"
+  "main.js": "./main.a52d21e878cb260663e1.bundle.js",
+  "99e45dd643ded087661d3f7924503b74.png": "./99e45dd643ded087661d3f7924503b74.png",
+  "ac4bd71e831a04baaadc8e530e5f6eb6.svg": "./ac4bd71e831a04baaadc8e530e5f6eb6.svg",
+  "eabc2dd8e208d3f0c61ccdf85f1d4045.svg": "./eabc2dd8e208d3f0c61ccdf85f1d4045.svg",
+  "f7a285413b82d3945379daef33ff66a8.svg": "./f7a285413b82d3945379daef33ff66a8.svg",
+  "favicon.ico": "./favicon.ico",
+  "index.html": "./index.html"
 }
