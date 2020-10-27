@@ -9,10 +9,10 @@ export const ApplicationRoutes = {
         { path: '/', exact: true, component: Home, key: 'home' },
         { path: '/inicio', exact: true, component: Home, key: 'home' },
         { path: '/personas', exact: true, component: Personas, key: 'personas' },
-        { path: '/personas/new', exact: true, component: PersonasNew, key: 'personas-new' },
-        { path: '/personas/view', exact: true, component: PersonasView, key: 'personas-view' },
+        { path: '/personas-new', exact: true, component: PersonasNew, key: 'personas-new' },
+        { path: '/personas-view', exact: true, component: PersonasView, key: 'personas-view' },
         { path: '/antecs', exact: true, component: Antecs, key: 'antecs' },
-        { path: '/antecs/view', exact: true, component: Antecs, key: 'antecs-view' },
+        { path: '/antecs-view', exact: true, component: Antecs, key: 'antecs-view' },
     ]
 }
 

@@ -9,7 +9,7 @@ const Personas = () => {
         <Container>
             <OptionsWrapper>
                 <Card>
-                    <Card.Link href='/personas/view'>
+                    <Card.Link href='/personas-view'>
                         <ImgWrapper>
                             <img src={searchSvg} width="45%" alt="img-search" />
                         </ImgWrapper>
@@ -24,7 +24,7 @@ const Personas = () => {
                     </Card.Link>
                 </Card>
                 <Card>
-                    <Card.Link href='/personas/new'>
+                    <Card.Link href='/personas-new'>
                         <ImgWrapper>
                             <img src={addSvg} width="35%" alt="img-add" />
                         </ImgWrapper>

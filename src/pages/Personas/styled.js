@@ -15,13 +15,16 @@ export const OptionsWrapper = styled.div`
     transition: all .3s ease;
 
     .card {
+        cursor: pointer;
         min-height: 200px;
         transition: all .3s ease;
         width: 20rem;
 
         .card-title {
+            font-family: 'AileronHeavyItalic', sans-serif;
             font-size: 2rem;
             letter-spacing: -1.5px;
+            font-style: italic;
         }
 
         .card-link {
@@ -30,6 +33,7 @@ export const OptionsWrapper = styled.div`
         }
 
         p.card-text {
+            font-family: 'AileronLightItalic', sans-serif;
             font-size: 1.25rem;
             font-weight: 200;
         }

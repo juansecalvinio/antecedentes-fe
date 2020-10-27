@@ -13,9 +13,34 @@ export const Title = styled.div`
     margin: 0 auto 0 2rem;
 
     & h1 {
+        font-family: 'AileronHeavyItalic', sans-serif;
         font-size: 5rem;
         font-weight: bold;
         letter-spacing: -3px;
+        font-style: italic;
+    }
+
+    & button {
+        border: .5px solid #3C9FE3;
+        border-radius: 15px;
+        background: transparent;
+        margin-top: 1rem;
+        padding: 0.5rem;
+        transition: all .3s ease-in-out;
+        
+        &:active {
+            transform: scale(0.9);
+        }
+
+        & a {
+            font-family: 'AileronLightItalic', sans-serif;
+            font-size: 1.5rem;
+        }
+
+        & a, a:active, a:hover {
+            color: #3C9FE3;
+            text-decoration: none;
+        }
     }
 `;
 

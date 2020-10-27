@@ -7,6 +7,7 @@ const Home = () => {
         <Container>
             <Title>
                 <h1>Bienvenido a Antecedentes Laborales</h1>
+                <button><a href="/personas">Ir a Personas</a></button>
             </Title>
             <Illustration>
                 <img src={illustration} alt="img-home" />
