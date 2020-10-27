@@ -3,13 +3,14 @@ const webpack = require('webpack')
 const dotenv = require('dotenv').config({ path: './.env.local' });
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 const ManifestPlugin = require('webpack-manifest-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
-module.exports = {
+module.exports = ({ ENV_FILE }, argv ) => ({
   entry: path.join(__dirname, './src/index.js'),
   output: {
     path: path.join(__dirname, './build'),
     filename: '[name].[hash].bundle.js',
-    publicPath: '/'
+    publicPath: './'
 
   },
   module: {
@@ -40,11 +41,15 @@ module.exports = {
         use: ['json-loader', 'yaml-loader']
       },
       {
-        test: /\.(jpe?g|png|gif|svg)$/i,
-        exclude: [/\.js$/, /\.html$/, /\.json$/, /\.ejs$/],
-        loaders: [
-          'file-loader?hash=sha512&digest=hex&name=[hash].[ext]',
-          'image-webpack-loader?bypassOnDebug&optimizationLevel=7&interlaced=false'
+        test: /\.(png|svg|jpg|gif)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              outputPath: 'images/'
+            }
+          }
         ]
       },
       {
@@ -56,7 +61,6 @@ module.exports = {
   },
   resolve: {
     alias: {
-      react: path.resolve('./node_modules/react'),
       assets: path.resolve(__dirname, "src", "assets"),
       app: path.resolve(__dirname, "src", "app"),
     },
@@ -70,7 +74,10 @@ module.exports = {
   },
   plugins: [
     new webpack.DefinePlugin({
-      "process.env": JSON.stringify(dotenv.parsed)
+      "process.env": JSON.stringify({
+        ...dotenv.congif({ path: `./.env.${ENV_FILE}` }).parsed,
+        NODE_ENV: argv.mode
+      })
     }),
     new ManifestPlugin({
       fileName: './public/manifest.json',
@@ -78,6 +85,10 @@ module.exports = {
     new HtmlWebPackPlugin({
       template: './public/index.html',
       favicon: './public/favicon.ico'
+   }),
+   new MiniCssExtractPlugin({
+     filename: 'css/[name].[hash].css',
+     chunkFilename: 'css/[id].[hash].css'
    })
   ]
-};
+});

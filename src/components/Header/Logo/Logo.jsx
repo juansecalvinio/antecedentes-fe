@@ -1,7 +1,7 @@
 import React from 'react';
 import { LogoWrapper } from './styled';
 import { Link } from 'react-router-dom';
-import logo from './../../../assets/img/main-brand.png';
+import logo from './../../../assets/img/ant-lab-brand.png';
 
 const Logo = () => {
     return (

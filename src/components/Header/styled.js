@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
 export const HeaderContainer = styled.div`
-    background: #009EE3;
-    border-bottom: 1px solid #F1F1F1;
+    background: #FFFFFF;
+    border-bottom: 1px solid #009EE3;
     display: flex;
     align-items: center;
     justify-content: space-between;

@@ -9,8 +9,8 @@ import {
 import { FaTimes as CloseIcon } from 'react-icons/fa'
 
 const menuItems = [
-    { name: 'Personas', link:'/personas' },
-    { name: 'Antecedentes', link:'/antecs' },
+    { name: 'Personas', link:'./personas' },
+    { name: 'Antecedentes', link:'./antecs' },
 ]
 
 const Menu = ({ menu, menuOff }) => {

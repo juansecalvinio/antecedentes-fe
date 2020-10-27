@@ -57,7 +57,7 @@ const GlobalStyle = createGlobalStyle`
 ReactDOM.render(
     <Provider store={store}>
         <PersistGate persistor={persistor}>
-            <BrowserRouter history={history}>
+            <BrowserRouter history={history} basename="/">
                 <GlobalStyle />
                 <Spinner />
                 <App>
