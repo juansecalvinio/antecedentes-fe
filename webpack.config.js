@@ -10,8 +10,7 @@ module.exports = ({ ENV_FILE }, argv ) => ({
   output: {
     path: path.join(__dirname, './build'),
     filename: '[name].[hash].bundle.js',
-    publicPath: './'
-
+    publicPath: '/'
   },
   module: {
     rules: [
@@ -67,11 +66,6 @@ module.exports = ({ ENV_FILE }, argv ) => ({
     extensions: ['*', '.js', '.jsx'],
   },
   devtool: 'inline-source-map',
-  devServer: {
-    historyApiFallback: true,
-    contentBase: '/.build',
-    port: 3000,
-  },
   plugins: [
     new webpack.DefinePlugin({
       'process.env': JSON.stringify({

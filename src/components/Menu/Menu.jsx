@@ -9,8 +9,8 @@ import {
 import { FaTimes as CloseIcon } from 'react-icons/fa'
 
 const menuItems = [
-    { name: 'Personas', link:'./personas' },
-    { name: 'Antecedentes', link:'./antecs' },
+    { name: 'Personas', link:'/app/personas' },
+    { name: 'Antecedentes', link:'/app/antecs' },
 ]
 
 const Menu = ({ menu, menuOff }) => {
@@ -20,11 +20,11 @@ const Menu = ({ menu, menuOff }) => {
                 <div className='close-menu'>
                     <CloseIcon color="#000000" size={20} onClick={menuOff} />
                 </div>
-                <Nav.Link href="/inicio">Inicio</Nav.Link>
+                <Link to="/app" onClick={menuOff}>Inicio</Link>
             </MenuHeader>
             <MenuItems>
                 <Nav defaultActiveKey="/" className="flex-column">
-                    {menuItems.map(item => <Nav.Link key={item.name} href={item.link}>{item.name}</Nav.Link>)}
+                    {menuItems.map(item => <Link onClick={menuOff} key={item.name} to={item.link}>{item.name}</Link>)}
                 </Nav>
             </MenuItems>
         </MenuContainer>

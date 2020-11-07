@@ -6,17 +6,20 @@ const INITIAL_STATE = {
 export function personsReducer(state = INITIAL_STATE, action) {
     switch(action.type) {
         case 'FETCH_PERSONS': {
-            const { data: persons } = action.payload;
             return {
                 ...state,
-                persons,
+                persons: action.payload.data.data,
             }
         }
         case 'FETCH_PERSON': {
-            const { data: person } = action.payload;
             return {
                 ...state,
-                person,
+                person: action.payload.data.data,
+            }
+        }
+        default: {
+            return {
+                ...state
             }
         }
     }

@@ -27,9 +27,15 @@ export const OptionsWrapper = styled.div`
             font-style: italic;
         }
 
-        .card-link {
+        a {
             color: #202020;
             font-size: 1.5rem;
+            text-decoration: none;
+        }
+
+        a:active, a:hover, a:focus, a:visited {
+            text-decoration: none;
+            color: inherit;
         }
 
         p.card-text {

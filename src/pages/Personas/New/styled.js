@@ -40,13 +40,14 @@ export const FormContainer = styled.div`
     width: 90%;
 
     & h3 {
+        font-family: 'AileronHeavyItalic', sans-serif;
         margin-bottom: 1.5rem;
     }
 
     & .group-check {
         display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
+        flex-direction: column;
+        /* flex-wrap: wrap; */
         width: 100%;
     }
 
