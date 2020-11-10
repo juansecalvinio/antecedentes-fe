@@ -7,6 +7,7 @@ import illustration from './../../assets/img/search-illustration.svg';
 
 const PageContainer = styled.div`
     margin: 12rem 5rem; /** 8rem tiene height del Header */
+    margin-bottom: 0;
     position: relative;
 `;
 

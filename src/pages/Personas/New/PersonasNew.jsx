@@ -18,6 +18,7 @@ Si no hay informacion en AFIP, mostrar Formulario para Agregar nueva Persona
 
 const PageContainer = styled.div`
     margin: 12rem 5rem; /** 8rem tiene height del Header */
+    margin-bottom: 0;
     position: relative;
 `;
 

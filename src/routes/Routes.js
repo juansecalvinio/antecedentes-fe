@@ -7,7 +7,7 @@ import Antecs from './../pages/Antecs/Antecs.jsx';
 
 export const ApplicationRoutes = {
     Routes: [
-        { path: '/', exact: true, component: Home, key: 'landing' },
+        { path: '/', exact: true, component: Landing, key: 'landing' },
         // { path: '/', exact: true, component: Landing, key: 'landing' },
         // { path: '/login', exact: true, component: Login, key: 'login' },
         { path: '/app', exact: true, component: Home, key: 'home' },
