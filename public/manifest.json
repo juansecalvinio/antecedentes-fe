@@ -1,9 +1,11 @@
 {
-  "main.js": "./main.4ca60ee133e89f46d8e5.bundle.js",
+  "main.js": "./main.dbd548e70f7ada8db5da.bundle.js",
   "favicon.ico": "./favicon.ico",
   "images/add-illustration.svg": "./images/add-illustration.svg",
   "images/admin-antecs.svg": "./images/admin-antecs.svg",
   "images/ant-lab-brand.png": "./images/ant-lab-brand.png",
+  "images/landing-img-section.svg": "./images/landing-img-section.svg",
+  "images/logo-white.png": "./images/logo-white.png",
   "images/search-files.svg": "./images/search-files.svg",
   "images/search-illustration.svg": "./images/search-illustration.svg",
   "index.html": "./index.html"
