@@ -7,6 +7,12 @@ export const Container = styled.div`
     width: 100%;
 `;
 
+export const PageContainer = styled.div`
+    margin: 12rem 5rem; /** 8rem tiene height del Header */
+    margin-bottom: 0;
+    position: relative;
+`;
+
 export const OptionsWrapper = styled.div`
     display: flex;
     align-items: center;
@@ -27,9 +33,15 @@ export const OptionsWrapper = styled.div`
             font-style: italic;
         }
 
-        .card-link {
+        a {
             color: #202020;
             font-size: 1.5rem;
+            text-decoration: none;
+        }
+
+        a:active, a:hover, a:focus, a:visited {
+            text-decoration: none;
+            color: inherit;
         }
 
         p.card-text {

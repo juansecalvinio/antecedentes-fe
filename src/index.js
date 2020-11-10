@@ -2,13 +2,12 @@ import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
 import { persistor, store } from './store/Store';
 import { Provider } from 'react-redux';
-import { Switch, BrowserRouter, withRouter } from 'react-router-dom';
-import { createBrowserHistory } from 'history';
+import { Switch, HashRouter, withRouter } from 'react-router-dom';
+import { createHashHistory } from 'history';
 import { PersistGate } from 'redux-persist/lib/integration/react';
 import ApplicationRoutes from './routes/Routes';
 import AppRoute from './routes/AppRoute';
 import App from './container/App';
-import Main from './container/Main';
 import { createGlobalStyle } from 'styled-components';
 import * as serviceWorker from './serviceWorker';
 
@@ -17,7 +16,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Spinner from './components/Spinner/SpinnerContainer';
 import './config/AxiosConfig';
 
-const history = createBrowserHistory();
+const history = createHashHistory();
 
 const { Routes } = ApplicationRoutes;
 
@@ -26,12 +25,10 @@ const BodyComponent = ({ location: { pathName } }) => {
 
     return (
         <Switch>
-            <Main>
             {Routes.map((route, key) => 
                 <AppRoute {...route} extraPropsHeader={setExtraPropsHeader} key={key} routes={Routes} 
                 />
             )}
-            </Main>
         </Switch>
 
     )
@@ -58,13 +55,13 @@ const GlobalStyle = createGlobalStyle`
 ReactDOM.render(
     <Provider store={store}>
         <PersistGate persistor={persistor}>
-            <BrowserRouter history={history} basename="/">
+            <HashRouter history={history} basename="/">
                 <GlobalStyle />
                 <Spinner />
                 <App>
                     <Body key="body" />
                 </App>
-            </BrowserRouter>
+            </HashRouter>
         </PersistGate>
     </Provider>, document.getElementById('root'));
 

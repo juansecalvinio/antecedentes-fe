@@ -1,15 +1,15 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { HeaderContainer } from './styled'
 import Logo from './Logo/Logo';
-import { Nav} from "react-bootstrap";
 import { FaBars as MenuIcon } from 'react-icons/fa'
 
 const Header = ({ menuOn }) => (
     <HeaderContainer>
         <MenuIcon color="#009EE3" size={30} onClick={menuOn} />
-        <Nav.Link href="/inicio">
+        <Link to="/app">
             <Logo />
-        </Nav.Link>
+        </Link>
     </HeaderContainer>
 )
 

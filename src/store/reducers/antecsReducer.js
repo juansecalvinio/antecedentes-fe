@@ -19,5 +19,10 @@ export function antecsReducer(state = INITIAL_STATE, action) {
                 antec,
             }
         }
+        default: {
+            return {
+                ...state
+            }
+        }
     }
 }
