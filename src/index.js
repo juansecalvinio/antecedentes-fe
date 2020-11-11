@@ -12,6 +12,7 @@ import { createGlobalStyle } from 'styled-components';
 import * as serviceWorker from './serviceWorker';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
+import "antd/dist/antd.css";
 
 import Spinner from './components/Spinner/SpinnerContainer';
 import './config/AxiosConfig';
