@@ -44,6 +44,9 @@ const GlobalStyle = createGlobalStyle`
         box-sizing: border-box;
         font-family: 'AileronRegular', sans-serif;
     }
+    body {
+        height: 0 !important;
+    }
     html,
     body {
         transition: all .3s ease;
