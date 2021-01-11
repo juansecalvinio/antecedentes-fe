@@ -10,4 +10,13 @@ export const LogoWrapper = styled.div`
         margin: 0 auto;
         text-decoration: none;
     }
+
+    @media screen 
+    and (min-device-width: 360px) 
+    and (max-device-height: 820px) {
+        
+        img {
+            width: 115%;
+        }
+    }
 `;

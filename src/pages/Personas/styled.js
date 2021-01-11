@@ -20,6 +20,23 @@ export const OptionsWrapper = styled.div`
     width: 100%;
     transition: all .3s ease;
 
+    @media screen 
+    and (min-device-width: 360px) 
+    and (max-device-height: 820px) {
+
+        flex-direction: column;
+
+        .card {
+            width: 15rem !important;
+            min-height: 150px !important;
+            margin-bottom: 1rem;
+
+            .card-title {
+                font-size: 1.3rem !important
+            }
+        }
+    }
+
     .card {
         cursor: pointer;
         min-height: 200px;
@@ -63,4 +80,12 @@ export const ImgWrapper = styled.div`
     justify-content: center;
     padding: 1.25rem;
     min-height: 150px;
+
+    @media screen 
+    and (min-device-width: 360px) 
+    and (max-device-height: 820px) {
+
+       display: none !important;
+
+    }
 `;

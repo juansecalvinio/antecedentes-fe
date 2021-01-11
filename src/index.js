@@ -12,6 +12,7 @@ import { createGlobalStyle } from 'styled-components';
 import * as serviceWorker from './serviceWorker';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
+import "antd/dist/antd.css";
 
 import Spinner from './components/Spinner/SpinnerContainer';
 import './config/AxiosConfig';
@@ -42,6 +43,9 @@ const GlobalStyle = createGlobalStyle`
         padding: 0;
         box-sizing: border-box;
         font-family: 'AileronRegular', sans-serif;
+    }
+    body {
+        height: 0 !important;
     }
     html,
     body {

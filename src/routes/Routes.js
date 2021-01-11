@@ -1,5 +1,6 @@
 import Home from './../pages/Home/Home';
 import Landing from './../pages/Landing/Landing';
+import Login from './../pages/Login/Login';
 import Personas from './../pages/Personas/Personas.jsx';
 import PersonasNew from './../pages/Personas/New/PersonasNew.jsx';
 import PersonasView from './../pages/Personas/View/PersonasView.jsx';
@@ -7,9 +8,9 @@ import Antecs from './../pages/Antecs/Antecs.jsx';
 
 export const ApplicationRoutes = {
     Routes: [
+        // { path: '/', exact: true, component: Home, key: 'landing' },
         { path: '/', exact: true, component: Landing, key: 'landing' },
-        // { path: '/', exact: true, component: Landing, key: 'landing' },
-        // { path: '/login', exact: true, component: Login, key: 'login' },
+        { path: '/login', exact: true, component: Login, key: 'login' },
         { path: '/app', exact: true, component: Home, key: 'home' },
         { path: '/app/personas', exact: true, component: Personas, key: 'personas' },
         { path: '/app/personas-new', exact: true, component: PersonasNew, key: 'personas-new' },

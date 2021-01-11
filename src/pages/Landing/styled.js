@@ -5,8 +5,8 @@ export const Container = styled.div`
     height: 100vh;
 
     & header {
-        background: rgb(24,104,142);
-        background: linear-gradient(5deg, rgba(24,104,142,1) 0%, rgba(60,159,227,1) 66%, rgba(0,187,255,1) 100%);
+        background: rgba(24,144,255,1);
+        background: linear-gradient(5deg, rgba(24,144,255,1) 0%, rgba(24,144,227,1) 50%, rgba(0,187,255,1) 100%);
         position: relative;
         display: flex;
         flex-direction: column;
@@ -52,7 +52,7 @@ export const Container = styled.div`
             }
 
             img {
-                width: 50%;
+                width: 100%;
             }
 
             @media screen 
@@ -67,6 +67,7 @@ export const Container = styled.div`
                     font-size: 2rem;
                     letter-spacing: -1px;
                     text-align: center;
+                    
                 }
 
                 img {
@@ -76,17 +77,38 @@ export const Container = styled.div`
             }      
         }
 
-        section.join {
+        section.info {
+            background: rgba(24,144,255,1);
+            background: linear-gradient(5deg, rgba(24,144,255,1) 0%, rgba(24,144,227,1) 50%, rgba(0,187,255,1) 100%);
+            width: 100%;
             display: flex;
+            flex-direction: column;
             align-items: center;
-            justify-content: center;
-            padding: 2rem;
             padding-bottom: 5rem;
-            margin: 0 auto;
-            width: 90%;
+
+            div.info-wrapper {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 5rem 3rem;
+                margin: 0 auto;
+            
+                h2 {
+                    color: #FFFFFF;
+                    font-size: 4.5rem;
+                    font-family: 'AileronHeavyItalic', sans-serif;
+                    letter-spacing: -3px;
+                    text-align: right;
+                    margin: 0 5rem;
+                }
+
+                img {
+                    width: 100%;
+                }
+            }
 
             & button {
-                border: 2px solid #3C9FE3;
+                border: 2px solid #FFFFFF;
                 border-radius: 15px;
                 background: transparent;
                 margin-top: 1rem;
@@ -103,10 +125,36 @@ export const Container = styled.div`
                 }
 
                 & a, a:active, a:hover {
-                    color: #3C9FE3;
+                    color: #FFFFFF;
                     text-decoration: none;
                 }
             }
+
+            @media screen 
+            and (min-device-width: 360px) 
+            and (max-device-height: 820px) {
+
+                flex-direction: column;
+
+                div.info-wrapper {
+                    flex-direction: column-reverse;
+                    width: 100%;
+                    padding: 2rem;
+                }
+
+                div.info-wrapper h2 {
+                    font-size: 2rem;
+                    letter-spacing: -1px;
+                    text-align: center;
+                    margin: 0;
+                    
+                }
+
+                div.info-wrapper img {
+                    width: 55%;
+                    margin-top: 2rem;
+                }
+            }   
         }
     }
 
