@@ -42,6 +42,19 @@ export const Title = styled.div`
             text-decoration: none;
         }
     }
+
+    @media screen 
+    and (min-device-width: 360px) 
+    and (max-device-height: 820px) {
+
+        margin: 0;
+        width: auto;
+        
+        & h1 {
+            font-size: 40px;
+        }
+
+    }
 `;
 
 export const Illustration = styled.div`
@@ -50,5 +63,12 @@ export const Illustration = styled.div`
 
     & img {
         width: 90%;
+    }
+
+    @media screen 
+    and (min-device-width: 360px) 
+    and (max-device-height: 820px) {
+
+        display: none;
     }
 `;

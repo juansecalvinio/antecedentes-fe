@@ -13,6 +13,10 @@ const Login = () => {
     const [email, setEmail] = useState('');
     const [register, setRegister] = useState(false);
 
+    const userRef = React.createRef();
+    const passRef = React.createRef();
+    const emailRef = React.createRef();
+
     const handleGoogleLoginSuccess = response => {
 
     }
@@ -29,12 +33,14 @@ const Login = () => {
                     <Form name="normal_login" className="login-form" initialValues={{ remember: true }} onFinish={()=>{}}>
                         <Form.Item name="username" rules={[{ required: true, message: 'Ingrese su nombre de usuario' }]}>
                             <Input 
+                                ref={userRef}
                                 prefix={<UserOutlined className="site-form-item-icon" />}
                                 size="large"
                                 placeholder="Usuario" />
                         </Form.Item>
                         <Form.Item name="password" rules={[{ required: true, message: 'Ingrese su contraseña' }]}>
                             <Input 
+                                ref={passRef}
                                 prefix={<LockOutlined className="site-form-item-icon" />}
                                 type="password"
                                 size="large"
@@ -42,7 +48,8 @@ const Login = () => {
                             />
                         </Form.Item>
                         { register && <Form.Item name="email" rules={[{ required: true, message: 'Ingrese su email' }]}>
-                            <Input 
+                            <Input
+                                ref={emailRef}
                                 prefix={<MailOutlined className="site-form-item-icon" />}
                                 type="text"
                                 size="large"

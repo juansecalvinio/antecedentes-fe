@@ -18,4 +18,12 @@ export const HeaderContainer = styled.div`
     & svg:hover {
         cursor: pointer;
     }
+
+    @media screen 
+    and (min-device-width: 360px) 
+    and (max-device-height: 820px) {
+        svg {
+            width: 50%;
+        }
+    }
 `;
