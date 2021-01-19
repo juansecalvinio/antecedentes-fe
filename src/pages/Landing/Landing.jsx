@@ -23,9 +23,7 @@ const Landing = () => {
                     <div className="contenedor-textos" data-aos="fade-right">
                         <h1 className="titulo">Todo lo que necesitas,<br></br> en un sólo lugar</h1>
                         <h2 className="subtitulo">Llegó una nueva forma de obtener información</h2>
-                        <button>
-                            <a href="/#/app" className="cta">Entrar ahora</a>
-                        </button>
+                        <a href="/#/app" className="cta">Entrar ahora</a>
                     </div>
                     <div className="contenedor-imagen" data-aos="fade-up">
                         <img src={illustration} alt="illustration"/>

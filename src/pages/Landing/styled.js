@@ -67,8 +67,8 @@ export const Container = styled.div`
                 font-family: 'AileronItalic', sans-serif !important;
                 margin: 2rem 0;
             }
-
-            button {
+            
+            a {
                 display: inline-block;
                 width: 255px;
                 height: 70px;
@@ -77,13 +77,10 @@ export const Container = styled.div`
                 background: #ffffff;
                 border-radius: 15px;
                 border: none;
-                
-                a {
-                    color: #24C6DC;
-                    font-family: 'AileronItalic', sans-serif !important;
-                    text-decoration: none;
-                    font-size: 1.25rem;
-                }
+                color: #24C6DC;
+                font-family: 'AileronItalic', sans-serif !important;
+                text-decoration: none;
+                font-size: 1.25rem;
             }
         }
 
@@ -146,12 +143,9 @@ export const Container = styled.div`
                     text-align: center;
                 }
 
-                button {
+                a {
                     width: 200px;
-
-                    a {
-                        font-size: 1rem;
-                    }
+                    font-size: 1rem;
                 }
             }
         }
