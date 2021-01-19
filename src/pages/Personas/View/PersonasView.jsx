@@ -103,7 +103,7 @@ const PersonasView = ({ person, persons, getAll, getById, getByCuit }) => {
                                     <PersonContainer key={e._id}>
                                         <div className="info">
                                             <div className="info-data">
-                                                <span className="label">Nombre completo: </span>
+                                                <span className="label">Nombre: </span>
                                                 <span className="value">{e.firstName}</span>
                                             </div>
                                             <div className="info-data">

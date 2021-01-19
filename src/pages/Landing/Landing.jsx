@@ -1,44 +1,38 @@
-import React from 'react'
+import React, { useState } from 'react'
+import AOS from 'aos';
+import "aos/dist/aos.css";
 import { Container } from './styled';
 import { Link } from 'react-router-dom';
-import logoWhite from './../../assets/img/logo-white.png';
-import imgSection from './../../assets/img/landing-img-section.svg';
-import imgSection2 from './../../assets/img/landing-img-section-2.svg';
-import imgSection3 from './../../assets/img/landing-img-section-3.svg';
+import fondoVector from './../../assets/img/fondo-blanco-svg.svg';
+import logoColor from '../../assets/img/logo-landing.svg';
+import illustration from './../../assets/img/illustration-landing.svg';
 
 const Landing = () => {
+
+    React.useEffect(() => {
+        AOS.init({ duration: 2000 });
+    }, []);
+
     return (
         <Container>
-            <header>
-                <img src={logoWhite} alt="logo" />
-            </header>
-            <main>
-                <section className="intro">
-                    <h2>
-                        Llegó una
-                        nueva forma
-                        de obtener
-                        información
-                    </h2>
-                    <img src={imgSection2} alt="img-section" />
+            <main className="contenedor">
+                <section className="section-uno" data-aos="fade-left">
+                    <img src={logoColor} alt="logo"/>
                 </section>
-                <section className="info">
-                    <div className="info-wrapper">
-                        <img src={imgSection3} alt="img-section" />
-                        <h2>
-                            Todos los datos
-                            que necesitas,
-                            en un sólo lugar
-                        </h2>
+                <section className="section-dos">
+                    <div className="contenedor-textos" data-aos="fade-right">
+                        <h1 className="titulo">Todo lo que necesitas,<br></br> en un sólo lugar</h1>
+                        <h2 className="subtitulo">Llegó una nueva forma de obtener información</h2>
+                        <button>
+                            <a href="/#/app" className="cta">Entrar ahora</a>
+                        </button>
                     </div>
-                    <button>
-                        <a href="/#/app">Ingresar</a>
-                    </button>
+                    <div className="contenedor-imagen" data-aos="fade-up">
+                        <img src={illustration} alt="illustration"/>
+                    </div>
                 </section>
+                <img className="wave" src={fondoVector} alt="wave"/>
             </main>
-            <footer>
-                <img src={logoWhite} alt="logo" />
-            </footer>
         </Container>
     )
 }
