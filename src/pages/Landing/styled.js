@@ -60,25 +60,26 @@ export const Container = styled.div`
             h1.titulo {
                 font-size: 4.5rem;
                 font-family: 'AileronHeavyItalic', sans-serif !important;
+                margin: 0;
             }
 
             h2.subtitulo {
-                font-size: 2rem;
-                font-family: 'AileronItalic', sans-serif !important;
+                font-size: 2.25rem;
+                font-family: 'AileronLightItalic', sans-serif !important;
                 margin: 2rem 0;
             }
-            
+
             a {
                 display: inline-block;
                 width: 255px;
                 height: 70px;
-                padding: 15px 0;
+                padding: 20px 0 15px 0;
                 text-align: center;
                 background: #ffffff;
                 border-radius: 15px;
                 border: none;
                 color: #24C6DC;
-                font-family: 'AileronItalic', sans-serif !important;
+                font-family: 'AileronLightItalic', sans-serif !important;
                 text-decoration: none;
                 font-size: 1.25rem;
             }
@@ -116,6 +117,7 @@ export const Container = styled.div`
                 justify-content: center;
 
                 img {
+                    padding: .5rem;
                     width: 100%;
                 }                
             }
@@ -134,19 +136,27 @@ export const Container = styled.div`
                 padding: 0 !important;
 
                 h1.titulo {
-                    font-size: 2rem !important;
+                    font-size: 2.5rem !important;
                     text-align: center;
+                    margin: 0;
                 }
 
                 h2.subtitulo {
-                    font-size: 1.25rem !important;
+                    font-size: 1.55rem !important;
                     text-align: center;
+                    margin-left: 1rem;
+                    margin-right: 1rem;
                 }
 
                 a {
-                    width: 200px;
-                    font-size: 1rem;
+                    color: #514A9D;
+                    font-size: 1.5rem;
+                    padding: 15px 0;
                 }
+            }
+
+            .contenedor-imagen img {
+                width: 80%;
             }
         }
     }
