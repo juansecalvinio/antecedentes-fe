@@ -45,6 +45,7 @@ const GlobalStyle = createGlobalStyle`
         font-family: 'AileronRegular', sans-serif;
     }
     body {
+        background: #FBFBFB !important;
         height: 0 !important;
     }
     html,

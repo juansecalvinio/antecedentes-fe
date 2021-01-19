@@ -125,6 +125,7 @@ export const Container = styled.div`
             .section-dos {
                 flex-direction: column-reverse;
                 padding: 0;
+                margin-bottom: 4.5rem;
             }
 
             .contenedor-textos {

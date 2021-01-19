@@ -2,13 +2,13 @@ import React from 'react'
 import styled from 'styled-components';
 import Topbar from './../../components/Topbar/Topbar';
 import { Link } from 'react-router-dom';
-import { Container, ImgWrapper, OptionsWrapper } from './styled';
+import { Container, ImgWrapper, OptionsWrapper, TitleWrapper } from './styled';
 import { Card } from 'react-bootstrap';
 import searchSvg from './../../assets/img/search-files.svg';
 import addSvg from './../../assets/img/add-illustration.svg';
 
 const PageContainer = styled.div`
-    margin: 12rem 5rem; /** 8rem tiene height del Header */
+    margin: 7rem 5rem; /** 8rem tiene height del Header */
     margin-bottom: 0;
     position: relative;
 `;
@@ -19,6 +19,9 @@ const Personas = () => {
             <Topbar />
             <PageContainer>
                 <Container>
+                    <TitleWrapper>
+                        <h3>Personas</h3>
+                    </TitleWrapper>
                     <OptionsWrapper>
                         <Card>
                             <Link to='/app/personas-view'>
@@ -27,7 +30,7 @@ const Personas = () => {
                                 </ImgWrapper>
                                 <Card.Body>
                                     <Card.Title>
-                                        Buscar persona
+                                        Buscar
                                     </Card.Title>
                                     <Card.Text>
                                         Consultar información en el sistema.
@@ -42,7 +45,7 @@ const Personas = () => {
                                 </ImgWrapper>
                                 <Card.Body>
                                     <Card.Title>
-                                        Agregar persona
+                                        Agregar
                                     </Card.Title>
                                     <Card.Text>
                                         Dar de alta un nuevo registro en el sistema.

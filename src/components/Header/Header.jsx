@@ -6,7 +6,7 @@ import { FaBars as MenuIcon } from 'react-icons/fa'
 
 const Header = ({ menuOn }) => (
     <HeaderContainer>
-        <MenuIcon color="#009EE3" size={30} onClick={menuOn} />
+        <MenuIcon color="#FFFFFF" size={30} onClick={menuOn} />
         <Link to="/app">
             <Logo />
         </Link>
