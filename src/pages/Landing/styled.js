@@ -16,7 +16,7 @@ export const Container = styled.div`
 
     .contenedor {
         position: relative;
-        height: 600px;
+        ${'' /* height: 600px; */}
         display: flex;
         align-items: center;
         flex-direction: column;
@@ -33,7 +33,7 @@ export const Container = styled.div`
 
             img {
                 padding: 4rem;
-                width: 40%;
+                width: 35%;
             }
         }
 
@@ -43,14 +43,16 @@ export const Container = styled.div`
 
         .wave {
             position: absolute;
+            overflow: hidden;
             top: 0;
             right: 0;
-            width: 85%;
+            width: 80%;
         }
 
         .contenedor-textos {
             flex-basis: 50%;
             padding-left: 4rem;
+            padding-bottom: 4rem;
             overflow: hidden;
 
             h1, h2 {
@@ -58,27 +60,27 @@ export const Container = styled.div`
             }
             
             h1.titulo {
-                font-size: 4.5rem;
+                font-size: 2.75rem;
                 font-family: 'AileronHeavyItalic', sans-serif !important;
                 margin: 0;
             }
 
             h2.subtitulo {
-                font-size: 2.25rem;
+                font-size: 1.5rem;
                 font-family: 'AileronLightItalic', sans-serif !important;
-                margin: 2rem 0;
+                margin: 1.75rem 0;
             }
 
             a {
                 display: inline-block;
-                width: 255px;
-                height: 70px;
-                padding: 20px 0 15px 0;
+                width: 200px;
+                height: 50px;
+                padding-top: 10px;
                 text-align: center;
                 background: #ffffff;
                 border-radius: 15px;
                 border: none;
-                color: #24C6DC;
+                color: #3B89BD;
                 font-family: 'AileronLightItalic', sans-serif !important;
                 text-decoration: none;
                 font-size: 1.25rem;
@@ -118,7 +120,7 @@ export const Container = styled.div`
 
                 img {
                     padding: .5rem;
-                    width: 100%;
+                    width: 80%;
                 }                
             }
 
@@ -137,13 +139,13 @@ export const Container = styled.div`
                 padding: 0 !important;
 
                 h1.titulo {
-                    font-size: 2.5rem !important;
+                    font-size: 1.75rem !important;
                     text-align: center;
                     margin: 0;
                 }
 
                 h2.subtitulo {
-                    font-size: 1.55rem !important;
+                    font-size: 1.25rem !important;
                     text-align: center;
                     margin-left: 1rem;
                     margin-right: 1rem;
@@ -151,8 +153,8 @@ export const Container = styled.div`
 
                 a {
                     color: #514A9D;
-                    font-size: 1.5rem;
-                    padding: 15px 0;
+                    ${'' /* font-size: 1.5rem;
+                    padding: 15px 0; */}
                 }
             }
 

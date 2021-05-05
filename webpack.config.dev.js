@@ -4,7 +4,7 @@ module.exports = ({ ENV_FILE }, argv) => ({
   ...webpackBase({ ENV_FILE }, argv),
   devServer: {
     historyApiFallback: true,
-    port: 3000
+    port: 3001
   },
   devtool: 'inline-source-map'
 });

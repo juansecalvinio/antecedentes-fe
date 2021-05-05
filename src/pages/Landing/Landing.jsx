@@ -10,22 +10,22 @@ import illustration from './../../assets/img/illustration-landing.svg';
 const Landing = () => {
 
     React.useEffect(() => {
-        AOS.init({ duration: 2000 });
+        AOS.init({ duration: 1500 });
     }, []);
 
     return (
         <Container>
             <main className="contenedor">
-                <section className="section-uno" data-aos="fade-left">
+                <section className="section-uno" data-aos="fade-out">
                     <img src={logoColor} alt="logo"/>
                 </section>
                 <section className="section-dos">
-                    <div className="contenedor-textos" data-aos="fade-right">
+                    <div className="contenedor-textos" data-aos="fade-out">
                         <h1 className="titulo">Todo lo que necesitas,<br></br> en un sólo lugar</h1>
                         <h2 className="subtitulo">Llegó una nueva forma de obtener información</h2>
                         <a href="/#/app" className="cta">Entrar ahora</a>
                     </div>
-                    <div className="contenedor-imagen" data-aos="fade-up">
+                    <div className="contenedor-imagen" data-aos="fade-out">
                         <img src={illustration} alt="illustration"/>
                     </div>
                 </section>

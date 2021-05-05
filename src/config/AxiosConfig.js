@@ -37,22 +37,27 @@ const errorHandler = error => {
         switch(error.response.status.toString()) {
             case '400': {
                 // Bad request
+                errorMessage = error.response.data.message;
                 break;
             }
             case '401': {
                 // Unauthorized
+                errorMessage = error.response.data.message;
                 break;
             }
             case '403': {
                 // Forbbiden
+                errorMessage = error.response.data.message;
                 break;
             }
             case '404': {
                 // Not found
+                errorMessage = error.response.data.message;
                 break;
             }
             case '500': {
                 // Internal server error
+                errorMessage = error.response.data.message;
                 break;
             }
             default: {

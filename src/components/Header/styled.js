@@ -20,6 +20,12 @@ export const HeaderContainer = styled.div`
         cursor: pointer;
     }
 
+    div.right-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
     @media screen 
     and (min-device-width: 360px) 
     and (max-device-height: 820px) {

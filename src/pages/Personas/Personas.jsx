@@ -6,6 +6,8 @@ import { Container, ImgWrapper, OptionsWrapper, TitleWrapper } from './styled';
 import { Card } from 'react-bootstrap';
 import searchSvg from './../../assets/img/search-files.svg';
 import addSvg from './../../assets/img/add-illustration.svg';
+import AOS from 'aos';
+import "aos/dist/aos.css";
 
 const PageContainer = styled.div`
     margin: 7rem 5rem; /** 8rem tiene height del Header */
@@ -14,11 +16,16 @@ const PageContainer = styled.div`
 `;
 
 const Personas = () => {
+
+    React.useEffect(() => {
+        AOS.init({ duration: 1000 });
+    }, []);
+
     return (
         <React.Fragment>
             <Topbar />
             <PageContainer>
-                <Container>
+                <Container data-aos="fade-out">
                     <TitleWrapper>
                         <h3>Personas</h3>
                     </TitleWrapper>

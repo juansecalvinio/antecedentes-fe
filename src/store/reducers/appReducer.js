@@ -36,7 +36,7 @@ export function appReducer(state=INITIAL_STATE, action) {
                 ...state,
                 loading: false,
                 menu: false,
-                error
+                error: error
             }
         }
         default: {

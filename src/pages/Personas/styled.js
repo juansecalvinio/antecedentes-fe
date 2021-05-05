@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const Container = styled.div`
     display: flex;
     flex-direction: column;
-    margin-top: 5rem;
+    margin-top: 3rem;
     width: 100%;
 `;
 
@@ -23,18 +23,17 @@ export const OptionsWrapper = styled.div`
     justify-content: center;
     width: 100%;
     transition: all .3s ease;
-    padding: 5rem;
+    padding: 1rem 5rem;
 
     .card {
         background: #FFFFFF;
         border-radius: 10px;
         box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.05);
-        border-radius: 10px;
         cursor: pointer;
         transition: all .3s ease;
         width: 350px;
-        min-height: 450px;
-        max-height: 450px;
+        min-height: 400px;
+        max-height: 400px;
         margin: 0 2rem;
 
         .card-title {
@@ -98,7 +97,7 @@ export const ImgWrapper = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 5rem;
+    margin-top: 3rem;
     padding: 1.25rem;
     min-height: 150px;
 
