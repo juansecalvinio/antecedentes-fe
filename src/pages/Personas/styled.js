@@ -12,7 +12,8 @@ export const TitleWrapper = styled.div`
     h3 {
         color: #FFFFFF;
         font-size: 4rem;
-        font-family: 'AileronHeavyItalic', sans-serif;
+        font-family: 'Raleway', sans-serif;
+        font-weight: bold;
         text-align: center;
     }
 `;
@@ -27,6 +28,7 @@ export const OptionsWrapper = styled.div`
 
     .card {
         background: #FFFFFF;
+        border: none;
         border-radius: 10px;
         box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.05);
         cursor: pointer;
@@ -37,10 +39,10 @@ export const OptionsWrapper = styled.div`
         margin: 0 2rem;
 
         .card-title {
-            font-family: 'AileronHeavyItalic', sans-serif;
+            font-family: 'Raleway', sans-serif;
+            font-weight: bold;
             font-size: 2.5rem;
             letter-spacing: -1.5px;
-            font-style: italic;
             text-align: center;
         }
 
@@ -61,9 +63,9 @@ export const OptionsWrapper = styled.div`
         }
 
         p.card-text {
-            font-family: 'AileronLightItalic', sans-serif;
-            font-size: 1.25rem;
+            font-family: 'Raleway', sans-serif;
             font-weight: 200;
+            font-size: 1.25rem;
             text-align: center;
             margin: 0 3rem;
         }

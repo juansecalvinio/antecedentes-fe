@@ -13,8 +13,9 @@ export function fetchPersons() {
     return async function (dispatch) {
         try {
             const response = await personsServices.getPersons();
-            const { data } = response;
+            const { data, error } = response;
             if(data) {
+                dispatch(fetchFailure(error));
                 dispatch({ type: 'FETCH_PERSONS', payload: { data } });
             } else {
                 dispatch(fetchFailure('No se encontraron datos de personas'));
@@ -37,8 +38,9 @@ export function fetchPersonById(id) {
                 throw 'No se encontraron datos para buscar';
             }
             const response = await personsServices.getPersonById(id);
-            const { data } = response;
+            const { data, error } = response;
             if(data) {
+                dispatch(fetchFailure(error));
                 dispatch({ type: 'FETCH_PERSON', payload: { data } });
             } else {
                 dispatch(fetchFailure('No se encontraron datos de ninguna persona'));
@@ -61,8 +63,9 @@ export function fetchPersonByCuit(cuit) {
                 throw 'No se encontraron datos para buscar';
             }
             const response = await personsServices.getPersonByCuit(cuit);
-            const { data } = response;
+            const { data, error } = response;
             if(data) {
+                dispatch(fetchFailure(error));
                 dispatch({ type: 'FETCH_PERSON', payload: { data } });
             } else {
                 dispatch(fetchFailure('No se encontraron datos de ninguna persona'));
@@ -76,44 +79,22 @@ export function fetchPersonByCuit(cuit) {
 /**
  * Function: insertPerson()
  * Desc: Registra una persona en la base de datos 
- * POST: /api/persons && /api/persons-antecs
- * Params: personData, antecsData
+ * POST: /api/persons
+ * Params: body
  */
-export function insertPerson(personData, antecsData) {
-    console.log('insertPerson: ', JSON.stringify(personData));
-    return function (dispatch) {
+export function insertPerson(body) {
+    return async function (dispatch) {
         dispatch({ type: 'LOADING_ON' });
         try {
-            // if(!personData || !antecsData) {
-            //     throw 'No se encontraron datos para registrar';
-            // }
-            // TODO: Hacer primero el await a registerPerson() y dentro del then() hacer registerPersonAntecs()
-            return new Promise((resolve, reject) => {
-                fetch(`${config.api.url}/persons`, {
-                    method: 'post',
-                    mode: 'no-cors',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify(personData)
-                })
-                .then(response => {
-                    console.log(response);
-                    // if(!response.ok) {
-                    //     throw 'Ocurrió un error, intente nuevamente';
-                    // }
-                    // return response.json();
-                })
-                .then(data => {
-                    dispatch({ type: 'LOADING_OFF' });
-                    console.log(data);
-                })
-                .catch(error => {
-                    console.error(error)
-                    dispatch({ type: 'LOADING_OFF' });
-                    dispatch(fetchFailure(error))
-                })
-            })
+           const response = await personsServices.registerPerson(body)
+           const { data } = response;
+           if(data) {
+               return data;
+           } else {
+               let error = response.error.errorMessage;
+               dispatch(fetchFailure(error));
+               throw error;
+           }           
         } catch (error) {
             dispatch(fetchFailure(error));
         }

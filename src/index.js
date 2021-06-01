@@ -42,7 +42,7 @@ const GlobalStyle = createGlobalStyle`
         margin: 0;
         padding: 0;
         box-sizing: border-box;
-        font-family: 'AileronRegular', sans-serif;
+        font-family: 'Raleway', sans-serif;
     }
     body {
         background: #FBFBFB !important;

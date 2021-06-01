@@ -61,13 +61,15 @@ export const Container = styled.div`
             
             h1.titulo {
                 font-size: 2.75rem;
-                font-family: 'AileronHeavyItalic', sans-serif !important;
+                font-family: 'Raleway', sans-serif !important;
+                font-weight: bold;
                 margin: 0;
             }
 
             h2.subtitulo {
                 font-size: 1.5rem;
-                font-family: 'AileronLightItalic', sans-serif !important;
+                font-family: 'Raleway', sans-serif !important;
+                font-weight: 200;
                 margin: 1.75rem 0;
             }
 
@@ -81,7 +83,8 @@ export const Container = styled.div`
                 border-radius: 15px;
                 border: none;
                 color: #3B89BD;
-                font-family: 'AileronLightItalic', sans-serif !important;
+                font-family: 'Raleway', sans-serif !important;
+                font-weight: 200;
                 text-decoration: none;
                 font-size: 1.25rem;
             }

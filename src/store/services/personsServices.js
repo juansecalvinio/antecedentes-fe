@@ -13,11 +13,4 @@ export class PersonsServices {
     registerPerson(data) {
         return Axios.post('/persons', data);
     }
-    registerPersonAntecs(person, antec) {
-        const data = {
-            "personId": person,
-            "antecId": antec
-        }
-        return Axios.post('/persons-antecs', data);
-    }
 }

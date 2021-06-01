@@ -8,7 +8,7 @@ export const Spinner = props => {
         <div>
             {loading && 
             <StyledSpinner>
-                <ClipLoader size='50'
+                <ClipLoader size={50}
                 color='#009EE3'
                 loading={loading} />
             </StyledSpinner>}

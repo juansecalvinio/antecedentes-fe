@@ -21,10 +21,10 @@ export const OptionsWrapper = styled.div`
         width: 20rem;
 
         .card-title {
-            font-family: 'AileronHeavyItalic', sans-serif;
+            font-family: 'Raleway', sans-serif;
+            font-weight: 700;
             font-size: 2rem;
             letter-spacing: -1.5px;
-            font-style: italic;
         }
 
         a {
@@ -39,9 +39,9 @@ export const OptionsWrapper = styled.div`
         }
 
         p.card-text {
-            font-family: 'AileronLightItalic', sans-serif;
-            font-size: 1.25rem;
+            font-family: 'Raleway', sans-serif;
             font-weight: 200;
+            font-size: 1.25rem;
         }
     }
 

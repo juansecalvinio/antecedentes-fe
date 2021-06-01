@@ -1,95 +1,15 @@
+import "aos/dist/aos.css";
 import React, { useState, useEffect } from 'react'
 import AOS from 'aos';
-import "aos/dist/aos.css";
+import config from '../../config/config';
+import Topbar from '../../components/Topbar/Topbar';
 import { connect } from 'react-redux';
 import { Link, useHistory } from 'react-router-dom';
 import { notification, Form, Input, Button, Checkbox } from 'antd';
 import { UserOutlined, LockOutlined, MailOutlined, AlertOutlined } from '@ant-design/icons';
 import { GoogleLogin } from 'react-google-login';
 import { loginUser } from '../../store/actions/loginActions';
-import styled from 'styled-components';
-import config from '../../config/config';
-import Topbar from '../../components/Topbar/Topbar';
-
-
-const Container = styled.div`
-    display: flex;
-    flex-direction: column;
-    margin-top: 5rem;
-    width: 100%;
-`;
-
-const PageContainer = styled.div`
-    margin: 7rem 5rem; /** 8rem tiene height del Header */
-    margin-bottom: 0;
-    position: relative;
-`;
-
-const TitleWrapper = styled.div`
-    h3 {
-        color: #FFFFFF;
-        font-size: 4rem;
-        font-family: 'AileronHeavyItalic', sans-serif;
-        text-align: center;
-    }
-`;
-
-const FormWrapper = styled.div`
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    transition: all .3s ease;
-    padding: 1rem;
-    margin: 0 auto;
-`;
-
-const InputsWrapper = styled.div`
-    background: #FFFFFF;
-    border: 1px solid #C6C6C6;
-    border-radius: 10px;
-    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.05);
-    min-height: 450px;
-    max-height: 400px;
-    ${'' /* min-width: 700px;
-    max-width: 700px; */}
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    padding: 2rem 1rem;
-    margin: 0 17rem;
-
-    h5 {
-        font-family: 'AileronHeavyItalic', sans-serif;
-        font-size: 2rem;
-        text-align: center;
-    }
-
-    form {
-        padding: 1rem;
-        margin: 0 9rem;
-        border-bottom: 1px solid #C6C6C6;
-
-        div.ant-form-item-control-input-content {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-top: .5rem;
-
-            button {
-                margin: .5rem;
-            }
-
-            button.login-form-button {
-                min-width: 175px;
-            }
-        }
-    }
-
-    div.google-login {
-        margin: 2rem auto;
-    }
-`;
+import { Container, PageContainer, TitleWrapper, FormWrapper, InputsWrapper } from './styled'
 
 const Login = ({
     error,
@@ -256,7 +176,7 @@ const Login = ({
 
 const mapStateToProps = state => {
     return {
-        error: state.appReducer.error,
+        error: state.appReducer.errorFailure,
         logged: state.loginReducer.logged,
         token: state.loginReducer.token,
         user: state.loginReducer.user,

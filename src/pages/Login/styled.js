@@ -1,66 +1,82 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-
-    width: 100%;
-    height: 100%;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    margin-top: 5rem;
+    width: 100%;
+`;
+
+export const PageContainer = styled.div`
+    margin: 7rem 5rem; /** 8rem tiene height del Header */
+    margin-bottom: 0;
+    position: relative;
+`;
+
+export const TitleWrapper = styled.div`
+    h3 {
+        color: #FFFFFF;
+        font-size: 4rem;
+        font-family: 'Raleway', sans-serif;
+        font-weight: bold;
+        text-align: center;
+    }
+`;
+
+export const FormWrapper = styled.div`
+    display: flex;
     align-items: center;
     justify-content: center;
+    width: 100%;
+    transition: all .3s ease;
+    padding: 1rem;
+    margin: 0 auto;
+`;
 
-    .form-container {
-        border-bottom: 1px solid #cccccc;
-        margin-bottom: 2rem;
+export const InputsWrapper = styled.div`
+    background: #FFFFFF;
+    border: 1px solid #C6C6C6;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.05);
+    min-height: 450px;
+    max-height: 450px;
+    min-width: 550px;
+    max-width: 550px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 1rem;
+    /* margin: 0 25rem; */
+
+    h5 {
+        font-family: 'Raleway', sans-serif;
+        font-weight: bold;
+        font-size: 2rem;
+        text-align: center;
     }
 
-    section {
-        ${'' /* border: 1px dashed black; */}
-        width: 100%;
-        height: 100vh;
-    }
+    form {
+        padding: 1rem;
+        margin: 0 3rem;
+        border-bottom: 1px solid #C6C6C6;
 
-    section.login {
+        div.ant-form-item-control-input-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: .5rem;
 
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-
-        img {
-            width: 50%;
-        }
-
-        .login-form {
-            max-width: 300px;
-        }
-
-        .login-form-forgot {
-            float: right;
-        }
-
-        .ant-col-rtl .login-form-forgot {
-            float: left;
-        }
-
-        .login-form-button {
-            width: 100%;
-        }
-
-        .ant-form-item-control-input-content {
             button {
-                margin: 0.5rem 0;
+                margin: .5rem;
+            }
+
+            button.login-form-button {
+                min-width: 175px;
             }
         }
     }
 
-    section.bg {
-        background: rgba(24,144,255,1);
-        background: linear-gradient(5deg, rgba(24,144,255,1) 0%, rgba(24,144,227,1) 50%, rgba(0,187,255,1) 100%);
-
-        img {
-            width: 100%;
-        }
+    div.google-login {
+        margin: 1.5rem auto;
     }
-
-    
 `;

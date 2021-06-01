@@ -1,71 +1,70 @@
 import styled from 'styled-components';
 
-export const SearchContainer = styled.div`
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    transition: all .3s ease;
-
-    & h2 {
-        font-family: 'AileronHeavyItalic', sans-serif;
-    }
-
-    .filter-wrapper {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        margin: 1rem;
-        margin-top: 2rem;
-
-        .input-group {
-            width: 50%;
-        }
-
-    }
-
-    .persons-wrapper {
-        border: none;
-    }
+export const PageContainer = styled.div`
+    margin: 7rem 5rem; /** 8rem tiene height del Header */
+    margin-bottom: 0;
+    position: relative;
 `;
 
-export const PersonContainer = styled.div`
-    border: 1px solid rgba(0,0,0,.125);
-    border-radius: 15px;
-    box-shadow: none;
-    width: 100%;
+export const TitleWrapper = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin: 0.5rem;
-    padding: 1.5rem;
+    margin: 0 1rem;
 
-    &:hover {
-        box-shadow: 0 8px 16px 0 rgba(0,0,0,.1);
-        border: 1px solid #009EE3;
-    }
+    div.arrow-title {
 
-    .info {
-        
-        .info-data {
-            span.label {
-                font-family: 'AileronLight', sans-serif;
-                font-size: 1.3rem;
-            }
-            span.value {
-                font-family: 'AileronHeavyItalic', sans-serif;
-                font-size: 1.5rem;
-                margin-left: 1rem;
-            }
-        }
-    }
-
-    .actions {
         display: flex;
-        flex-direction: column;
         align-items: center;
-        justify-content: space-evenly;
-        button {
-            margin: .2rem;
+
+        h3 {
+            color: #FFFFFF;
+            font-size: 2rem;
+            font-family: 'Raleway', sans-serif;
+            font-weight: bold;
+            text-align: center;
+            margin: 0 2rem;
+        }
+
+        svg:hover {
+            cursor: pointer;
+        }
+
+    }
+
+    button {
+        border-radius: 10px;
+        min-width: 150px;
+    }
+
+`;
+
+export const TableWrapper = styled.div`
+
+    .ant-table-wrapper {
+        background: #FFFFFF;
+        border: .5px solid rgba(0, 0, 0, 0.05);
+        border-radius: 15px;
+        box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.05);
+        width: 100%;
+        margin-top: 2rem;
+        padding: 2rem;
+        padding-left: 2rem;
+
+        .ant-table table {
+            
+            .ant-table-thead > tr > th {
+                background: #FFFFFF !important;
+                font-size: 1rem;
+                font-weight: 600;
+            }
+
+            tbody > tr > td {
+                font-size: 1rem;
+                font-weight: 300;
+            }
         }
     }
+
+
 `;

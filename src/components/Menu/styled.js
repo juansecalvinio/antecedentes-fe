@@ -49,8 +49,8 @@ export const MenuHeader = styled.div`
 
 export const MenuItems = styled.div`
     .flex-column.nav {
-        font-family: 'AileronLightItalic', sans-serif;
+        font-family: 'Raleway', sans-serif;
+        font-weight: 200;
         font-size: 1.5rem;
-        font-style: italic;
     }
 `;

@@ -29,12 +29,15 @@ const TitleWrapper = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0 18rem;
+    margin: 0 37rem;
+    /* min-width: 575px;
+    max-width: 575px; */
 
     h3 {
         color: #FFFFFF;
         font-size: 4rem;
-        font-family: 'AileronHeavyItalic', sans-serif;
+        font-family: 'Raleway', sans-serif;
+        font-weight: bold;
         text-align: center;
         flex: 2;
     }
@@ -61,23 +64,23 @@ const InputsWrapper = styled.div`
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.05);
     min-height: 475px;
     max-height: 475px;
-    ${'' /* min-width: 700px;
-    max-width: 700px; */}
+    min-width: 575px;
+    max-width: 575px;
     width: 100%;
     display: flex;
     flex-direction: column;
     padding: 2rem 1rem;
-    margin: 0 17rem;
 
     h4 {
-        font-family: 'AileronHeavyItalic', sans-serif;
+        font-family: 'Raleway', sans-serif;
+        font-weight: bold;
         font-size: 2rem;
         text-align: center;
     }
 
     form {
         padding: 1rem;
-        margin: 0 9rem;
+        margin: 0 3rem;
 
         div.ant-form-item-control-input-content {
             display: flex;

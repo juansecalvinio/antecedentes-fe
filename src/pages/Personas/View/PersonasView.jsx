@@ -1,71 +1,48 @@
 import React from 'react'
-import { connect } from 'react-redux';
-import { Link, useHistory } from 'react-router-dom';
-import styled from 'styled-components';
 import Topbar from '../../../components/Topbar/Topbar';
-import { Container, ImgWrapper, OptionsWrapper } from '../styled';
-import { Button } from 'antd';
-import { FaArrowLeft } from 'react-icons/fa';
 import AOS from 'aos';
 import "aos/dist/aos.css";
+import { connect } from 'react-redux';
+import { Link, useHistory } from 'react-router-dom';
+import { Container } from '../styled';
+import { PageContainer, TitleWrapper, TableWrapper } from './styled';
+import { Button, Table, Space } from 'antd';
+import { FaArrowLeft } from 'react-icons/fa';
+import { fetchPersons } from './../../../store/actions/personsActions';
 
-
-const PageContainer = styled.div`
-    margin: 7rem 5rem; /** 8rem tiene height del Header */
-    margin-bottom: 0;
-    position: relative;
-`;
-
-const TitleWrapper = styled.div`
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin: 0 1rem;
-
-    div.arrow-title {
-
-        display: flex;
-        align-items: center;
-
-        h3 {
-            color: #FFFFFF;
-            font-size: 2rem;
-            font-family: 'AileronHeavyItalic', sans-serif;
-            text-align: center;
-            margin: 0 2rem;
-        }
-
-        svg:hover {
-            cursor: pointer;
-        }
-
-    }
-
-    button {
-        border-radius: 10px;
-        min-width: 150px;
-    }
-
-`;
-
-const TableWrapper = styled.div`
-    background: #FFFFFF;
-    border: 1px solid #C6C6C6;
-    border-radius: 10px;
-    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.05);
-    width: 100%;
-    height: 700px;
-    margin-top: 2rem;
-    
-`;
-
-const PersonasView = () => {
+const PersonasView = ({ errorFailure, getPersons, loading, persons }) => {
 
     const history = useHistory();
 
     React.useEffect(() => {
         AOS.init({ duration: 1000 });
+
+        if(Object.entries(persons).length === 0) {
+            getPersons();
+        }
     }, []);
+
+    const tableColumns = [
+        { title: "Apellido", dataIndex: "lastName", key: "lastName" },
+        { title: "Nombre", dataIndex: "firstName", key: "firstName" },
+        { title: "DNI", dataIndex: "dni", key: "dni" },
+        { title: "CUIT", dataIndex: "cuit", key: "cuit" },
+        { title: "Acciones", key: "acciones", width: 150, render: () => (
+            <Space size="middle">
+                <a>Ver detalle</a>
+            </Space>
+        )},
+    ]
+
+    const tableData = Object.keys(persons).map((key, index) => {
+        return {
+            key: persons[key]._id,
+            lastName: persons[key].lastName,
+            firstName: persons[key].firstName,
+            dni: persons[key].dni,
+            cuit: persons[key].cuit,
+        }
+    })
 
     return (
         <React.Fragment>
@@ -82,7 +59,9 @@ const PersonasView = () => {
                         </Link>
                     </TitleWrapper>
                     <TableWrapper>
-                        
+                        { !loading && (
+                            <Table columns={tableColumns} dataSource={tableData} size="middle" />
+                        )}
                     </TableWrapper>
                 </Container>
             </PageContainer>
@@ -90,4 +69,18 @@ const PersonasView = () => {
     )
 }
 
-export default PersonasView;
+const mapStateToProps = state => {
+    return {
+        persons: state.personsReducer.persons,
+        error: state.appReducer.errorFailure,
+        loading: state.appReducer.loading,
+    }
+}
+
+const mapDispatchToProps = dispatch => {
+    return {
+        getPersons: () => dispatch(fetchPersons()),
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(PersonasView);

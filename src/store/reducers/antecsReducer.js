@@ -6,17 +6,17 @@ const INITIAL_STATE = {
 export function antecsReducer(state = INITIAL_STATE, action) {
     switch(action.type) {
         case 'FETCH_ANTECS': {
-            const { data: antecs } = action.payload;
+            const { data } = action.payload;
             return {
                 ...state,
-                antecs,
+                antecs: data,
             }
         }
         case 'FETCH_ANTEC': {
-            const { data: antec } = action.payload;
+            const { data } = action.payload;
             return {
                 ...state,
-                antec,
+                antec: data,
             }
         }
         default: {

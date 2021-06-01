@@ -1,6 +1,6 @@
 const INITIAL_STATE = {
     loading: false,
-    error: '',
+    errorFailure: '',
     menu: false,
 }
 
@@ -36,7 +36,7 @@ export function appReducer(state=INITIAL_STATE, action) {
                 ...state,
                 loading: false,
                 menu: false,
-                error: error
+                errorFailure: error
             }
         }
         default: {

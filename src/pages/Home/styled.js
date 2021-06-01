@@ -13,11 +13,10 @@ export const Title = styled.div`
     margin: 0 auto 0 2rem;
 
     & h1 {
-        font-family: 'AileronHeavyItalic', sans-serif;
+        font-family: 'Raleway', sans-serif;
         font-size: 5rem;
         font-weight: bold;
         letter-spacing: -3px;
-        font-style: italic;
     }
 
     & button {
@@ -33,7 +32,8 @@ export const Title = styled.div`
         }
 
         & a {
-            font-family: 'AileronLightItalic', sans-serif;
+            font-family: 'Raleway', sans-serif;
+            font-weight: 200;
             font-size: 1.5rem;
         }
 
