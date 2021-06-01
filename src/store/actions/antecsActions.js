@@ -11,10 +11,17 @@ const antecsServices = new AntecsServices();
 export function fetchAntecs() {
     return async function (dispatch) {
         try {
+            const options = [];
             const response = await antecsServices.getAntecs();
-            const { data } = response;
+            const { data } = response.data;
             if(data) {
-                dispatch({ type: 'FETCH_ANTECS', payload: { data } });
+                data.map(item => {
+                    options.push({
+                        value: item['_id'],
+                        label: item['name'],
+                    })
+                })
+                dispatch({ type: 'FETCH_ANTECS', payload: { data: options } });
             } else {
                 dispatch(fetchFailure('No se encontraron datos de antecedentes'));
             }

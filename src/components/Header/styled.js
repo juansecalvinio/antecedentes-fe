@@ -1,12 +1,13 @@
 import styled from 'styled-components';
 
 export const HeaderContainer = styled.div`
-    background: #009EE3;
-    border-bottom: 1px solid #F1F1F1;
+    ${'' /* background: #FFFFFF; */}
+    background: transparent;
+    ${'' /* border-bottom: 1px solid #009EE3; */}
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 8rem;
+    height: 5rem;
     left: 0;
     top: 0;
     padding-left: 2rem;
@@ -17,5 +18,19 @@ export const HeaderContainer = styled.div`
 
     & svg:hover {
         cursor: pointer;
+    }
+
+    div.right-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    @media screen 
+    and (min-device-width: 360px) 
+    and (max-device-height: 820px) {
+        svg {
+            width: 50%;
+        }
     }
 `;

@@ -1,35 +1,69 @@
 import React from 'react'
-import { Container, OptionsWrapper } from './styled';
+import styled from 'styled-components';
+import Topbar from './../../components/Topbar/Topbar';
+import { Link } from 'react-router-dom';
+import { Container, ImgWrapper, OptionsWrapper, TitleWrapper } from './styled';
 import { Card } from 'react-bootstrap';
+import searchSvg from './../../assets/img/search-files.svg';
+import addSvg from './../../assets/img/add-illustration.svg';
+import AOS from 'aos';
+import "aos/dist/aos.css";
+
+const PageContainer = styled.div`
+    margin: 7rem 5rem; /** 8rem tiene height del Header */
+    margin-bottom: 0;
+    position: relative;
+`;
 
 const Personas = () => {
+
+    React.useEffect(() => {
+        AOS.init({ duration: 1000 });
+    }, []);
+
     return (
-        <Container>
-            <OptionsWrapper>
-                <Card style={{ width: '20rem', marginLeft: '5rem' }}>
-                    <Card.Body>
-                        <Card.Title>Buscar persona</Card.Title>
-                        <Card.Text>
-                            Consultar información en el sistema.
-                        </Card.Text>
-                    </Card.Body>
-                    <Card.Footer>
-                        <Card.Link href='/personas/view'>Buscar</Card.Link>
-                    </Card.Footer>
-                </Card>
-                <Card style={{ width: '20rem', marginRight: '5rem' }}>
-                    <Card.Body>
-                        <Card.Title>Agregar persona</Card.Title>
-                        <Card.Text>
-                            Dar de alta un nuevo registro en el sistema.
-                        </Card.Text>
-                    </Card.Body>
-                    <Card.Footer>
-                        <Card.Link href='/personas/new'>Agregar</Card.Link>
-                    </Card.Footer>
-                </Card>
-            </OptionsWrapper>
-        </Container>
+        <React.Fragment>
+            <Topbar />
+            <PageContainer>
+                <Container data-aos="fade-out">
+                    <TitleWrapper>
+                        <h3>Personas</h3>
+                    </TitleWrapper>
+                    <OptionsWrapper>
+                        <Card>
+                            <Link to='/app/personas-view'>
+                                <ImgWrapper>
+                                    <img src={searchSvg} width="45%" alt="img-search" />
+                                </ImgWrapper>
+                                <Card.Body>
+                                    <Card.Title>
+                                        Buscar
+                                    </Card.Title>
+                                    <Card.Text>
+                                        Consultar información en el sistema.
+                                    </Card.Text>
+                                </Card.Body>
+                            </Link>
+                        </Card>
+                        <Card>
+                            <Link to='/app/personas-new'>
+                                <ImgWrapper>
+                                    <img src={addSvg} width="35%" alt="img-add" />
+                                </ImgWrapper>
+                                <Card.Body>
+                                    <Card.Title>
+                                        Agregar
+                                    </Card.Title>
+                                    <Card.Text>
+                                        Dar de alta un nuevo registro en el sistema.
+                                    </Card.Text>
+                                </Card.Body>
+                            </Link>
+                        </Card>
+                    </OptionsWrapper>
+                </Container>
+            </PageContainer>
+        </React.Fragment>
     )
 }
 

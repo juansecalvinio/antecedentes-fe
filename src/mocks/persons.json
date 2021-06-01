@@ -1,0 +1,25 @@
+[{
+    "_id": {
+      "$oid": "5ef0cad5d69e1b4053108832"
+    },
+    "firstName": "Manuel",
+    "lastName": "Belgrano",
+    "cuit": "20-36123123-2",
+    "age": 25
+  },{
+    "_id": {
+      "$oid": "5ef0cad5d69e1b4053108833"
+    },
+    "firstName": "Juan Jose",
+    "lastName": "Pasos",
+    "cuit": "20-36143143-2",
+    "age": 31
+  },{
+    "_id": {
+      "$oid": "5ef0cad5d69e1b4053108834"
+    },
+    "firstName": "Mariano",
+    "lastName": "Moreno",
+    "cuit": "20-36113113-2",
+    "age": 32
+  }]
