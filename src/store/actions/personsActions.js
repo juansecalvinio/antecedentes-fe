@@ -100,3 +100,18 @@ export function insertPerson(body) {
         }
     }
 }
+
+/**
+ * Function: chosePerson()
+ * Desc: Selecciona y guarda una persona en el store 
+ * Params: person => {}
+ */
+export function chosePerson(person) {
+    return function (dispatch) {
+        try {
+            dispatch({ type: 'FETCH_PERSON', payload: { data: person }})
+        } catch (error) {
+            dispatch(fetchFailure(error));
+        }
+    }
+}

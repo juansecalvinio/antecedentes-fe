@@ -6,19 +6,21 @@ import Hero from '../Hero/Hero';
 import Menu from '../Menu/Menu'
 import { menuOn, menuOff } from './../../store/actions/appActions';
 
-const Topbar = ({ menu, menuOn, menuOff }) => {
+const Topbar = ({ logged, menu, menuOn, menuOff, user }) => {
     return (
         <TopbarContainer>
-           <Hero menuOn={menuOn} />
-           <Menu menu={menu} menuOff={menuOff} />
-           <OverlayMenu className={ menu ? 'active' : 'unactive'} /> 
+           <Hero menuOn={menuOn} logged={logged} user={user} />
+           {/* <Menu logged={logged} menu={menu} menuOff={menuOff} /> */}
+           {/* <OverlayMenu className={ menu ? 'active' : 'unactive'} /> */}
         </TopbarContainer>
     )
 }
 
 const mapStateToProps = state => {
     return {
-        menu: state.appReducer.menu
+        logged: state.loginReducer.logged,
+        menu: state.appReducer.menu,
+        user: state.loginReducer.user,
     }
 }
 

@@ -3,10 +3,11 @@ import { connect } from 'react-redux';
 import { Link, useHistory } from 'react-router-dom';
 import { HeaderContainer } from './styled'
 import Logo from './Logo/Logo';
+import User from './User/User';
 import { FaBars as MenuIcon, FaPowerOff as Logout } from 'react-icons/fa'
 import { logoutUser } from './../../store/actions/loginActions';
 
-const Header = ({ menuOn, logoutUser, logged }) => {
+const Header = ({ menuOn, logoutUser, logged, user }) => {
 
     const history = useHistory();
     
@@ -18,11 +19,12 @@ const Header = ({ menuOn, logoutUser, logged }) => {
 
     return (
         <HeaderContainer>
-            <MenuIcon color="#FFFFFF" size={30} onClick={menuOn} />
+            {/* <MenuIcon color="#FFFFFF" size={30} onClick={menuOn} /> */}
+            <Link to="/app">
+                <Logo />
+            </Link>
             <div className="right-wrapper">
-                <Link to="/app">
-                    <Logo />
-                </Link>
+                { logged && <User user={user} /> }
                 { logged && <Logout color="#FFFFFF" size={30} onClick={logout} /> }
             </div>
         </HeaderContainer>
@@ -31,7 +33,7 @@ const Header = ({ menuOn, logoutUser, logged }) => {
 
 const mapStateToProps = state => {
     return {
-        logged: state.loginReducer.logged,
+        ...state
     }
 }
 

@@ -63,6 +63,33 @@ export const TableWrapper = styled.div`
                 font-size: 1rem;
                 font-weight: 300;
             }
+
+            .ant-space-item a {
+                
+                color: #3590FF;
+                display: block;
+                position: relative;
+                padding: 0.1rem 0;
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 0.05rem;
+                    background-color: #3590FF;
+                    transition: opacity 300ms, transform 300ms;
+                    opacity: 1;
+                    transform: scale(0);
+                    transform-origin: center;
+                }
+
+                &:hover::after,
+                &:focus::after {
+                    transform: scale(1);
+                }
+            }
         }
     }
 

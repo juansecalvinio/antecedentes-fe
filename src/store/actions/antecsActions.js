@@ -30,3 +30,25 @@ export function fetchAntecs() {
         }
     }
 }
+
+/**
+ * Function: fetchAntecsMultipleIds()
+ * Desc: Obtiene los antecedentes de un usuario del metodo GET: /api/antecs/ids
+ * Params: ids => []
+ */
+ export function fetchAntecsMultipleIds(ids) {
+    return async function (dispatch) {
+        try {
+            const response = await antecsServices.getAntecsByIds(ids);
+            const { data } = response.data;
+            if(data) {
+                return data;
+            } else {
+                dispatch(fetchFailure('No se encontraron datos de antecedentes'));
+            }
+        } catch (error) {
+            dispatch(fetchFailure(error));
+        }
+    }
+}
+

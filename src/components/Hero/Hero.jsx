@@ -2,10 +2,10 @@ import React from 'react'
 import Header from '../Header/Header';
 import { Container } from './styled';
 
-const Hero = ({ menuOn }) => {
+const Hero = ({ logged, menuOn, user }) => {
     return (
         <Container>
-            <Header menuOn={menuOn} />
+            <Header menuOn={menuOn} logged={logged} user={user} />
         </Container>
     )
 }

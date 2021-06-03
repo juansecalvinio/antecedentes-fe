@@ -6,11 +6,12 @@ import { connect } from 'react-redux';
 import { Link, useHistory } from 'react-router-dom';
 import { Container } from '../styled';
 import { PageContainer, TitleWrapper, TableWrapper } from './styled';
-import { Button, Table, Space } from 'antd';
+import { Button, Table, Space, Result } from 'antd';
+import { SearchOutlined } from '@ant-design/icons';
 import { FaArrowLeft } from 'react-icons/fa';
 import { fetchPersons } from './../../../store/actions/personsActions';
 
-const PersonasView = ({ errorFailure, getPersons, loading, persons }) => {
+const PersonasView = ({ error, getPersons, loading, persons }) => {
 
     const history = useHistory();
 
@@ -27,14 +28,17 @@ const PersonasView = ({ errorFailure, getPersons, loading, persons }) => {
         { title: "Nombre", dataIndex: "firstName", key: "firstName" },
         { title: "DNI", dataIndex: "dni", key: "dni" },
         { title: "CUIT", dataIndex: "cuit", key: "cuit" },
-        { title: "Acciones", key: "acciones", width: 150, render: () => (
-            <Space size="middle">
-                <a>Ver detalle</a>
-            </Space>
-        )},
+        { title: "Acciones", key: "acciones", width: 150, render: (props) => {
+                return(
+                    <Space size="middle">
+                        <a onClick={()=>history.push(`/app/personas-view/${props.key}`)}>Ver detalle</a>
+                    </Space>
+                )
+            }
+        },
     ]
 
-    const tableData = Object.keys(persons).map((key, index) => {
+    let tableData = Object.keys(persons).map((key, index) => {
         return {
             key: persons[key]._id,
             lastName: persons[key].lastName,
@@ -58,7 +62,7 @@ const PersonasView = ({ errorFailure, getPersons, loading, persons }) => {
                             <Button type="primary" size="large">Agregar</Button>
                         </Link>
                     </TitleWrapper>
-                    <TableWrapper>
+                    <TableWrapper data-aos="fade-out">
                         { !loading && (
                             <Table columns={tableColumns} dataSource={tableData} size="middle" />
                         )}

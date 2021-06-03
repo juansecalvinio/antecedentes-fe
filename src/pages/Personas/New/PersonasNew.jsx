@@ -161,7 +161,7 @@ const PersonasNew = ({ antecs, errorFailure, getAntecs, insertPerson }) => {
                                             prefix={<BankOutlined className="site-form-item-icon" />}
                                             type="text"
                                             size="large"
-                                            placeholder="Cuit"
+                                            placeholder="CUIT"
                                             onChange={(e) => setCuit(e.target.value)}
                                         />
                                     </Form.Item>

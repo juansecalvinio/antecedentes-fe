@@ -38,8 +38,8 @@ export const InputsWrapper = styled.div`
     border: 1px solid #C6C6C6;
     border-radius: 10px;
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.05);
-    min-height: 450px;
-    max-height: 450px;
+    min-height: 500px;
+    max-height: 500px;
     min-width: 550px;
     max-width: 550px;
     width: 100%;
@@ -77,6 +77,6 @@ export const InputsWrapper = styled.div`
     }
 
     div.google-login {
-        margin: 1.5rem auto;
+        margin: 2.5rem auto;
     }
 `;

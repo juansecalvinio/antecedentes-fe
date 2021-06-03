@@ -7,14 +7,14 @@ import { connect } from 'react-redux';
 import { Link, useHistory } from 'react-router-dom';
 import { notification, Form, Input, Button, Checkbox } from 'antd';
 import { UserOutlined, LockOutlined, MailOutlined, AlertOutlined } from '@ant-design/icons';
-import { GoogleLogin } from 'react-google-login';
-import { loginUser } from '../../store/actions/loginActions';
+import { GoogleLoginButton } from 'react-social-login-buttons';
+import { loginUser, getGoogleUrl } from '../../store/actions/loginActions';
 import { Container, PageContainer, TitleWrapper, FormWrapper, InputsWrapper } from './styled'
 
 const Login = ({
     error,
     login,
-    logged,
+    getGoogleUrl
 }) => {
 
     const history = useHistory();
@@ -28,33 +28,6 @@ const Login = ({
     React.useEffect(() => {
         AOS.init({ duration: 1000 });
     }, []);
-
-    // React.useEffect(() => {
-    //     if(logged) {
-    //        history.push("/app");
-    //     }
-    // }, [logged]);
-
-    // React.useEffect(() => {
-    //     if(error.length !== 0) {
-    //         notification.error({
-    //             message: error,
-    //             description: 'Verifique los datos e intente nuevamente',
-    //             placement: 'topLeft',
-    //             style: {
-    //                 backgroundColor: config.colors.error
-    //             }
-    //         })
-    //     }
-    // }, [error]);
-
-    const handleGoogleLoginSuccess = response => {
-        
-    }
-
-    const handleGoogleLoginFailure = response => {
-        
-    }
 
     const handleLogin = data => {
         // POST /login
@@ -80,31 +53,28 @@ const Login = ({
         console.error('Empty fields');
     }
 
-    // const validateInputs = () => {
-    //     let inputs = {};
-    //     inputs.username = username.length !== 0 ? false : true;
-    //     inputs.password = password.length !== 0 ? false : true;
+    const handleGoogleLogin = () => {
+        getGoogleUrl()
+        .then(url => window.location.href = url)
+        .catch(error => {
+            notification.error({
+                message: error,
+                description: 'No se pudo realizar conexión con Google. Verifique en unos minutos o intente con otro usuario',
+                placement: 'topLeft',
+                style: {
+                    backgroundColor: config.colors.error
+                }
+            })
+        });
+    }
 
-    //     setErrors({
-    //         ...errors,
-    //         ...inputs
-    //     })
+    const handleGoogleLoginSuccess = response => {
+        
+    }
 
-    //     return Object.values(inputs).every(e => e === false);
-    // }
-
-    // const handleClickLogin = e => {
-    //     e.preventDefault();
-    //     if(validateInputs()) {
-    //         console.log('Click login');
-    //         console.log({
-    //             username,
-    //             password
-    //         });
-    //     } else {
-    //         console.error('Faltan campos');
-    //     }
-    // }
+    const handleGoogleLoginFailure = response => {
+        
+    }
 
     return (
         <React.Fragment>
@@ -159,12 +129,9 @@ const Login = ({
 
                             </Form>
                             <div className="google-login">
-                                <GoogleLogin clientId="245942166200-hfb8qrm6m9cgip71l5iuteujhnriidn9.apps.googleusercontent.com"
-                                    onSuccess={handleGoogleLoginSuccess} 
-                                    onFailure={handleGoogleLoginFailure}
-                                    cookiePolicy={'single_host_origin'}
-                                    buttonText="Ingresar con Google"
-                                    />
+                                <GoogleLoginButton onClick={handleGoogleLogin}>
+                                    Acceder desde Google
+                                </GoogleLoginButton>
                             </div>
                         </InputsWrapper>
                     </FormWrapper>
@@ -186,6 +153,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
     return {
         login: (data) => dispatch(loginUser(data)),
+        getGoogleUrl: () => dispatch(getGoogleUrl())
     }
 }
 

@@ -10,9 +10,7 @@ export const HeaderContainer = styled.div`
     height: 5rem;
     left: 0;
     top: 0;
-    padding-left: 2rem;
     padding-right: 2rem;
-    position: fixed;
     width: 100%;
     z-index: 1;
 

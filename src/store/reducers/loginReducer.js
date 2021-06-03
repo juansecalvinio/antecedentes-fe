@@ -1,8 +1,8 @@
-import { getToken } from '../../helpers/AuthHelpers';
+import { getToken, getUser } from '../../helpers/AuthHelpers';
 
 const INITIAL_STATE = {
-    logged: getToken('session_token') ? true : false,
-    loggedUser: {},
+    logged: getToken() ? true : false,
+    user: getUser() || {},
     registered: false,
     token: '',
 }
