@@ -1,15 +1,16 @@
+import "aos/dist/aos.css";
 import React, { useState, useEffect } from 'react'
 import AOS from 'aos';
-import "aos/dist/aos.css";
 import styled from 'styled-components';
 import Topbar from '../../components/Topbar/Topbar';
+import config from '../../config/config';
 import { connect } from 'react-redux';
 import { Link, useHistory } from 'react-router-dom';
 import { notification, Form, Input, Button, Checkbox } from 'antd';
 import { UserOutlined, LockOutlined, MailOutlined } from '@ant-design/icons';
 import { registerUser } from '../../store/actions/loginActions';
-import config from '../../config/config';
 import { FaArrowLeft } from 'react-icons/fa';
+import { TitleWrapper } from './styled';
 
 const Container = styled.div`
     display: flex;
@@ -19,32 +20,9 @@ const Container = styled.div`
 `;
 
 const PageContainer = styled.div`
-    margin: 7rem 5rem; /** 8rem tiene height del Header */
+    margin: 5rem; /** 8rem tiene height del Header */
     margin-bottom: 0;
     position: relative;
-`;
-
-const TitleWrapper = styled.div`
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 37rem;
-    /* min-width: 575px;
-    max-width: 575px; */
-
-    h3 {
-        color: #FFFFFF;
-        font-size: 4rem;
-        font-family: 'Raleway', sans-serif;
-        font-weight: bold;
-        text-align: center;
-        flex: 2;
-    }
-
-    svg:hover {
-        cursor: pointer;
-    }
 `;
 
 const FormWrapper = styled.div`
@@ -87,6 +65,10 @@ const InputsWrapper = styled.div`
             align-items: center;
             justify-content: center;
             margin-top: .5rem;
+
+            button {
+                margin: .5rem;
+            }
 
             button.login-form-button {
                 min-width: 175px;
@@ -142,7 +124,7 @@ const Register = ({
             setRegistered(true);
             notification.success({
                 message: 'Registro completo!',
-                placement: 'topLeft',
+                placement: 'topRight',
                 style: {
                     backgroundColor: config.colors.success
                 }
@@ -152,7 +134,7 @@ const Register = ({
             notification.error({
                 message: error,
                 description: 'Verifique los datos e intente nuevamente',
-                placement: 'topLeft',
+                placement: 'topRight',
                 style: {
                     backgroundColor: config.colors.error
                 }
@@ -167,7 +149,7 @@ const Register = ({
             notification.error({
                 message: 'Las contraseñas no coinciden',
                 description: 'Verifique los datos e intente nuevamente',
-                placement: 'topLeft',
+                placement: 'topRight',
                 style: {
                     backgroundColor: config.colors.error
                 }
@@ -185,13 +167,12 @@ const Register = ({
             <PageContainer>
                 <Container>
                     <TitleWrapper data-aos="fade-out">
-                        <FaArrowLeft color="#FFFFFF" size={30} onClick={()=>history.goBack()} />
                         <h3>Registrarme</h3>
                     </TitleWrapper>
                     <FormWrapper>
                         {!registered ? (<InputsWrapper>
                             <h4 data-aos="fade-out">Ingresa tus datos</h4>
-                            <Form name="normal_login" className="login-form" 
+                            <Form name="normal_register" className="login-form" 
                                 initialValues={{ remember: true }} 
                                 onFinish={onFinish}
                                 onFinishFailed={onFinishFailed}
@@ -243,6 +224,11 @@ const Register = ({
                                 </Form.Item>
                                 
                                 <Form.Item>
+                                    <Link to="/login">
+                                        <Button shape="round" size="large">
+                                            Ir a Login
+                                        </Button>
+                                    </Link>
                                     <Button className="login-form-button" type="primary" htmlType="submit" shape="round" size="large">
                                         Registrarse
                                     </Button>

@@ -1,7 +1,9 @@
 import { getToken, getUser } from '../../helpers/AuthHelpers';
 
+const validateLogged = getToken() || getUser() ? true : false;
+
 const INITIAL_STATE = {
-    logged: getToken() ? true : false,
+    logged: validateLogged,
     user: getUser() || {},
     registered: false,
     token: '',

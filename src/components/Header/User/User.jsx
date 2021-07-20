@@ -6,7 +6,7 @@ const User = ({ user }) => {
     return (
         <UserWrapper>
             <Tooltip title={user.email}>
-                <Avatar style={{ backgroundColor: '#ffbf00' }}>{user.name.charAt(0)}</Avatar>
+                <Avatar src={user.picture || ""} style={{ backgroundColor: '#ffbf00' }}>{!user.picture ? user.name.charAt(0) : ""}</Avatar>
             </Tooltip>
         </UserWrapper>
     )

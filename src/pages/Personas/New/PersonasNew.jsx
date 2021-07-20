@@ -33,7 +33,7 @@ const PersonasNew = ({ antecs, errorFailure, getAntecs, insertPerson }) => {
             notification.error({
                 message: errorFailure,
                 description: 'Ocurrió un error. Intente nuevamente.',
-                placement: 'topLeft',
+                placement: 'topRight',
                 style: {
                     backgroundColor: config.colors.error
                 }
@@ -92,7 +92,7 @@ const PersonasNew = ({ antecs, errorFailure, getAntecs, insertPerson }) => {
             notification.error({
                 message: error,
                 description: 'No se pudo registrar la persona. Verifique los datos e intente nuevamente',
-                placement: 'topLeft',
+                placement: 'topRight',
                 style: {
                     backgroundColor: config.colors.error
                 }

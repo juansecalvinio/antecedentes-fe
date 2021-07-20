@@ -3,6 +3,8 @@ import React, { useState, useEffect } from 'react'
 import AOS from 'aos';
 import config from '../../config/config';
 import Topbar from '../../components/Topbar/Topbar';
+import Cookie from 'universal-cookie';
+import { GoogleLogin } from 'react-google-login';
 import { connect } from 'react-redux';
 import { Link, useHistory } from 'react-router-dom';
 import { notification, Form, Input, Button, Checkbox } from 'antd';
@@ -14,9 +16,10 @@ import { Container, PageContainer, TitleWrapper, FormWrapper, InputsWrapper } fr
 const Login = ({
     error,
     login,
-    getGoogleUrl
+    getGoogleUrl,
 }) => {
 
+    const cookie = new Cookie();
     const history = useHistory();
     
     const [email, setEmail] = useState('');
@@ -37,7 +40,7 @@ const Login = ({
             notification.error({
                 message: error,
                 description: 'Verifique los datos e intente nuevamente',
-                placement: 'topLeft',
+                placement: 'topRight',
                 style: {
                     backgroundColor: config.colors.error
                 }
@@ -53,27 +56,33 @@ const Login = ({
         console.error('Empty fields');
     }
 
-    const handleGoogleLogin = () => {
-        getGoogleUrl()
-        .then(url => window.location.href = url)
-        .catch(error => {
-            notification.error({
-                message: error,
-                description: 'No se pudo realizar conexión con Google. Verifique en unos minutos o intente con otro usuario',
-                placement: 'topLeft',
-                style: {
-                    backgroundColor: config.colors.error
-                }
-            })
-        });
-    }
+    const handleGoogleLogin = async () => {
 
-    const handleGoogleLoginSuccess = response => {
-        
-    }
+        const res = await fetch("/api/v1/auth/google", {
+            method: "POST",
+            body: JSON.stringify({
+            token: googleData.tokenId
+          }),
+          headers: {
+            "Content-Type": "application/json"
+          }
+        }) 
 
-    const handleGoogleLoginFailure = response => {
-        
+        const data = await res.json()
+        // store returned user somehow
+
+        // getGoogleUrl()
+        // .then(({ data: url }) => window.location.href = url)
+        // .catch(error => {
+        //     notification.error({
+        //         message: error,
+        //         description: 'No se pudo realizar conexión con Google. Verifique en unos minutos o intente con otro usuario',
+        //         placement: 'topLeft',
+        //         style: {
+        //             backgroundColor: config.colors.error
+        //         }
+        //     })
+        // });
     }
 
     return (
@@ -115,6 +124,10 @@ const Login = ({
                                         onChange={(e) => setPassword(e.target.value)}
                                     />
                                 </Form.Item>
+
+                                <Form.Item>
+                                    <Link to="/forget">Olvidé mi contraseña</Link>   
+                                </Form.Item>
                                 
                                 <Form.Item>
                                     <Link to="/register">
@@ -128,11 +141,11 @@ const Login = ({
                                 </Form.Item>
 
                             </Form>
-                            <div className="google-login">
+                            {/* <div className="google-login">
                                 <GoogleLoginButton onClick={handleGoogleLogin}>
                                     Acceder desde Google
                                 </GoogleLoginButton>
-                            </div>
+                            </div> */}
                         </InputsWrapper>
                     </FormWrapper>
                 </Container>
@@ -153,7 +166,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
     return {
         login: (data) => dispatch(loginUser(data)),
-        getGoogleUrl: () => dispatch(getGoogleUrl())
+        getGoogleUrl: () => dispatch(getGoogleUrl()),
     }
 }
 

@@ -84,7 +84,6 @@ export function fetchPersonByCuit(cuit) {
  */
 export function insertPerson(body) {
     return async function (dispatch) {
-        dispatch({ type: 'LOADING_ON' });
         try {
            const response = await personsServices.registerPerson(body)
            const { data } = response;
@@ -110,6 +109,30 @@ export function chosePerson(person) {
     return function (dispatch) {
         try {
             dispatch({ type: 'FETCH_PERSON', payload: { data: person }})
+        } catch (error) {
+            dispatch(fetchFailure(error));
+        }
+    }
+}
+
+/**
+ * Function: removePerson()
+ * Desc: Elimina una persona de la base de datos 
+ * Params: id => string
+ *         data => {}
+ */
+export function removePerson(id, body) {
+    return async function (dispatch) {
+        try {
+            const response = await personsServices.deletePerson(id, body)
+            const { data } = response;
+            if(data) {
+                return data;
+            } else {
+                let error = response.error.errorMessage;
+                dispatch(fetchFailure(error));
+                throw error;
+            }
         } catch (error) {
             dispatch(fetchFailure(error));
         }

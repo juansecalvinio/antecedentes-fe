@@ -13,4 +13,10 @@ export class PersonsServices {
     registerPerson(data) {
         return Axios.post('/persons', data);
     }
+    updatePerson(id, data) {
+        return Axios.put(`/persons/${id}`, data);
+    }
+    deletePerson(id) {
+        return Axios.delete(`/persons/${id}`);
+    }
 }

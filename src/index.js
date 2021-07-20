@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
+import config from './config/config';
 import { persistor, store } from './store/Store';
 import { Provider } from 'react-redux';
 import { Switch, HashRouter, withRouter } from 'react-router-dom';
@@ -31,7 +32,6 @@ const BodyComponent = ({ location: { pathName } }) => {
                 />
             )}
         </Switch>
-
     )
 }
 
@@ -68,6 +68,7 @@ ReactDOM.render(
                 </App>
             </HashRouter>
         </PersistGate>
-    </Provider>, document.getElementById('root'));
+    </Provider>, 
+    document.getElementById('root'));
 
 serviceWorker.unregister();

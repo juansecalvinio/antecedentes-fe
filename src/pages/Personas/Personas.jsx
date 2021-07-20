@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components';
 import Topbar from './../../components/Topbar/Topbar';
+import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { Container, ImgWrapper, OptionsWrapper, TitleWrapper } from './styled';
 import { Card } from 'react-bootstrap';
@@ -11,7 +12,7 @@ import AOS from 'aos';
 import "aos/dist/aos.css";
 
 const PageContainer = styled.div`
-    margin: 7rem 5rem; /** 8rem tiene height del Header */
+    margin: 5rem; /** 8rem tiene height del Header */
     margin-bottom: 0;
     position: relative;
 `;

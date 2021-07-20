@@ -65,7 +65,7 @@ export const OptionsWrapper = styled.div`
 `;
 
 export const PageContainer = styled.div`
-    margin: 7rem 5rem; /** 8rem tiene height del Header */
+    margin: 5rem; /** 8rem tiene height del Header */
     margin-bottom: 0;
     position: relative;
 `;
